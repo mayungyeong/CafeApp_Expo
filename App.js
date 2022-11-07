@@ -46,7 +46,7 @@ function App() {
             serverMessagesList.push(
               jsonRev[i].id +
               '님이 ' +
-              jsonRev[i].tnum +
+              (jsonRev[i].tnum + 1) +
               '번째 테이블 ' +
               '예약',
             );
@@ -58,7 +58,7 @@ function App() {
             serverMessagesList.push(
               jsonRev[i].id +
               '님이 ' +
-              jsonRev[i].tnum +
+              (jsonRev[i].tnum + 1) +
               '번째 테이블 ' +
               '예약 취소',
             );
@@ -215,12 +215,12 @@ function App() {
         <Text style={styles.serverState}>{serverState}</Text>
       </View>
 
-      <View style={styles.sendForm}>
+      {/* <View style={styles.sendForm}>
         <TextInput onChangeText={text => { setMessageText(text); }} value={messageText} style={styles.sendMessageArea} />
         <View style={styles.sendBtnForm}>
           <Button onPress={sendMessage} title="전송😘" disabled={messageText == ''} style={styles.sendBtn}></Button>
         </View>
-      </View>
+      </View> */}
 
       <ScrollView style={styles.getMessageArea}>
         {
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center', backgroundColor: "#DCECD2", color: "black"
   },
   getMessageArea: {
-    height: 150, width: 340, marginLeft: 17, marginTop: 100, padding: 15, borderRadius: 5, backgroundColor: "#DCECD2"
+    height: 240, width: 340, marginLeft: 17, marginTop: 50, padding: 15, borderRadius: 5, backgroundColor: "#DCECD2"
   },
   seatForm: {
     marginTop: 20
